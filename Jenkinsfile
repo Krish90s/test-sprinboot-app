@@ -25,14 +25,6 @@ pipeline {
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                // Push the Docker image to Docker Hub or another registry (optional)
-                // docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credentials') {
-                //     docker.image("${DOCKER_IMAGE}").push('latest')
-                // }
-            }
-        }
 
         stage('Deploy to EC2') {
             steps {
