@@ -25,7 +25,6 @@ pipeline {
             }
         }
 
-
         stage('Deploy to EC2') {
             steps {
                 // Deploy the Docker container on EC2
