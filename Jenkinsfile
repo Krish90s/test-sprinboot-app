@@ -16,11 +16,18 @@ pipeline {
             }
         }
 
+         stage('Build with Maven') {
+            steps {
+                // Run Maven build to generate the JAR file
+                sh 'mvn clean package'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
                 script {
-                    docker.build("${DOCKER_IMAGE}", ".")
+                    sh "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
